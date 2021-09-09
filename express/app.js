@@ -8,9 +8,9 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('/admin', adminRoutes.routes); //admin.routes, specifying cauz multiple exports
+app.use('/admin', adminRoutes.routes);
 app.use(shopRoutes);
 app.use('/', (req, res, next) => {
-  res.status(404).send('Page not found'); //sending status, setHeaders can be used like status
+  res.status(404).send('Page not found');
 });
 app.listen(3000);
